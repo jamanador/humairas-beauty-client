@@ -45,7 +45,6 @@ const Header = () => {
         <p className="">
           <Link to="/" className="font-bold text-sm md:text-xl">
             Humaira's Beauty
-            <span className="md:text-5xl text-2xl  text-primary">•</span>
           </Link>
         </p>
       </div>
