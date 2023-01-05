@@ -2,13 +2,17 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        "dark-blue": "#0b1120",
-      },
-      backgroundImage: {
-        main: "url('/src/assets/images/bg.png')",
-      },
+    colors: {
+      main: "#08AEEA",
+      second: "#2AF598",
+      black: "#000000",
+      white: "#ffffff",
+      orange: "#ff7849",
+      green: "#13ce66",
+      yellow: "#ffc82c",
+      "gray-dark": "#273444",
+      gray: "#8492a6",
+      "gray-light": "#d3dce6",
     },
   },
   plugins: [require("daisyui")],

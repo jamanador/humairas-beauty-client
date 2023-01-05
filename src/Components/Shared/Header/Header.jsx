@@ -5,8 +5,8 @@ const Header = () => {
   return (
     <div className="container mx-auto navbar bg-base-100 flex justify-between">
       <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <div className="dropdown px-2">
+          <label tabIndex={0} className="px-3 lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -43,8 +43,8 @@ const Header = () => {
           </div>
         </div>
         <p className="">
-          <Link to="/" className="font-bold text-sm md:text-xl">
-            Humaira's Beauty
+          <Link to="/" className="font-bold text-sm md:text-lg">
+            Humaira's <span className="text-second">Beauty</span>
           </Link>
         </p>
       </div>
@@ -62,7 +62,7 @@ const Header = () => {
       <div className="navbar-end">
         <Link
           to="/login"
-          className="py-1 text-white px-6 bg-gradient-to-r from-primary to-secondary"
+          className="py-1 text-white px-6 bg-gradient-to-r from-second to-main"
         >
           Login
         </Link>
