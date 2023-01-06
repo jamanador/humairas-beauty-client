@@ -1,17 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-    return (
-        <footer className="footer footer-center p-10 rounded mt-32">
-        <div className="flex flex-wrap gap-x-4">
-          <Link to="/">Home</Link>
-          <Link>About us</Link>
-          <Link to="/apointment">Apointment</Link>
-          <Link to="/blog">Blog</Link>
+  return (
+    <footer className="footer md:footer-center p-10 rounded md:mt-32 mt-6">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+        <div className="text-left">
+          <h4 className="font-bold lg:text-lg text-sm">Humaira's Beauty</h4>
+          <p className="text-sm py-2">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Exercitationem natus at magnam dolores eos incidunt suscipit.
+            Accusantium, eius fugiat fuga error numquam hic, quis expedita
+            praesentium atque nostrum vel eum!
+          </p>
+        </div>
+        <div className="text-left">
+          <h3 className="font-bold py-4 lg:text-lg text-sm">About Us</h3>
+          <div className="flex flex-col text-left">
+            <Link to="/">Home</Link>
+            <Link>About us</Link>
+            <Link to="/apointment">Apointment</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/apointment">Contact</Link>
+            <Link to="/blog">Services</Link>
+          </div>
         </div>
         <div>
-          <div className="flex flex-wrap gap-x-8">
+          <h3 className="font-bold py-4 lg:text-lg text-sm">Quick Links</h3>
+          <div className="flex flex-col text-left">
+            <Link to="/">Support</Link>
+            <Link>Terms & Conditions</Link>
+            <Link to="/apointment">Emergency</Link>
+            <Link to="/blog">Booking</Link>
+            <Link to="/apointment">Log In</Link>
+            <Link to="/blog">Services</Link>
+          </div>
+        </div>
+        <div>
+        <h3 className="font-bold py-4 lg:text-lg text-sm">Follow On</h3>
+        <div className="flex gap-x-8">
             <Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,16 +74,18 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div>
-          <p>
-            Copyright © 2022 - All right reserved by{" "}
-            <Link to="/" className="text-primary font-medium">
-              Humaira's Beauty
-            </Link>
-          </p>
-        </div>
-      </footer>
-    );
+        
+      </div>
+      <div>
+        <p>
+          Copyright © 2022 - All right reserved by{" "}
+          <Link to="/" className="text-primary font-medium">
+            Humaira's Beauty
+          </Link>
+        </p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

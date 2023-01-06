@@ -14,6 +14,9 @@ module.exports = {
       "gray-dark": "#273444",
       "gray-light": "#d3dce6",
     },
+    borderColor: {
+      gray: "#f4f4f5",
+    },
     extend: {},
   },
   plugins: [require("daisyui")],
