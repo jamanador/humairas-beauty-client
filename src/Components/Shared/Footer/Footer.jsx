@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
         
       </div>
-      <div>
+      <div className="pt-4">
         <p>
           Copyright © 2022 - All right reserved by{" "}
           <Link to="/" className="text-primary font-medium">
