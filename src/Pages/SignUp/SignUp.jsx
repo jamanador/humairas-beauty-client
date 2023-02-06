@@ -29,7 +29,17 @@ const SignUp = () => {
           .then((result) => {
             const user = result.user;
             console.log(user);
-            toast.success("Successfully Registered");
+            toast.success('Successfully Registered.', {
+              style: {
+                border: '1px solid #13ce66',
+                padding: '10px',
+                color: '#13ce66',
+              },
+              iconTheme: {
+                primary: '#13ce66',
+                secondary: '#ffffff',
+              },
+            });
             updateUserProfile(name, imageData.data.url)
               .then((result) => {})
               .catch((err) => {});
@@ -124,7 +134,7 @@ const SignUp = () => {
             className="input w-full  focus:outline-none border-gray rounded-xl"
           />
           <button className="w-full my-5 text-center py-1 text-white px-6 bg-gradient-to-r from-second to-main">
-            Log In
+            Submit
           </button>
         </form>
         <p className="text-sm text-center py-4">
