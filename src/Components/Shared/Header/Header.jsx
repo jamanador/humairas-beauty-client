@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
+import { authContext } from "../../../Context/AuthProvider";
 import './Header.css';
 const Header = () => {
+  const {user,logOut} = useContext(authContext)
+
+const handleLogOut = ()=>{
+  logOut()
+  .then(result =>{
+    toast.success("Log out Success")
+  }).catch(err =>{})
+}
+
   return (
     <div className="container mx-auto navbar bg-base-100 flex justify-between">
       <div className="navbar-start">
@@ -60,35 +71,27 @@ const Header = () => {
         </div>
       </div>
       <div className="navbar-end">
-        <Link
-          to="/login"
-          className="py-1 text-white px-6 bg-gradient-to-r from-second to-main"
-        >
-          Login
-        </Link>
-        {/* {user && user.uid ? (
+        
+        {user && user.uid ? (
             <>
-              <button
+              <button onClick={handleLogOut}
                 type="button"
                 className="py-1 text-white px-4 bg-accent rounded-lg"
               >
                 SignOut
               </button>
-              <Link to="/dashboard">
-                {" "}
-                <UserCircleIcon className="w-5 h-5 text-white bg-accent rounded-full m-2 active"></UserCircleIcon>
-              </Link>
+              
             </>
           ) : (
             <>
-              <Link
-                to="/login"
-                className="py-1 text-white px-6 bg-gradient-to-r from-primary to-secondary"
-              >
-                Login
-              </Link>
+            <Link
+          to="/login"
+          className="py-1 text-white px-6 bg-gradient-to-r from-second to-main"
+        >
+          Login
+        </Link>
             </>
-          )} */}
+          )}
       </div>
     </div>
   );

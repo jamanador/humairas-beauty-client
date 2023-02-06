@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "../../Context/AuthProvider";
 
 const Login = () => {
+  const {user} = useContext(authContext)
+  console.log(user);
   return (
     <div className="container mx-auto md:w-2/5">
      <div className="border-gray border mx-6 px-4 my-8">
