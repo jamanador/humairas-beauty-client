@@ -5,6 +5,7 @@ import { authContext } from "../../../Context/AuthProvider";
 import './Header.css';
 const Header = () => {
   const {user,logOut} = useContext(authContext)
+  console.log(user)
 
 const handleLogOut = ()=>{
   logOut()
@@ -80,6 +81,8 @@ const handleLogOut = ()=>{
               >
                 SignOut
               </button>
+            <img src={user?.photoURL} alt="" className="ml-2 w-12 h-12
+             rounded-full" />
               
             </>
           ) : (
