@@ -1,6 +1,6 @@
 import React from "react";
-import beauty from "../../../assets/images/beauty.png";
 import PrimaryButton from "../../../Components/Shared/PrimaryButton/PrimaryButton";
+import beauty from "../../../assets/images/beauty.png";
 const Banner = () => {
   return (
     <div className="container mx-auto md:flex md:justify-between items-center md:py-28 py-20 px-6">

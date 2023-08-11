@@ -42,9 +42,9 @@ const handleLogOut = ()=>{
 
             <NavLink to="/contact">Contact</NavLink>
 
-            <NavLink to="/apointment">Apoinment</NavLink>
+            <NavLink to="/">Apoinment</NavLink>
 
-            <NavLink to="/riviews">Reviews</NavLink>
+            <NavLink to="/">Reviews</NavLink>
             {/* {user && user.uid && (
                 <>
                   <label htmlFor="my-drawer-2" tabIndex={3} className="lg:hidden">
@@ -66,9 +66,9 @@ const handleLogOut = ()=>{
 
           <NavLink to="/contact">Contact</NavLink>
 
-          <NavLink to="/apointment">Apoinment</NavLink>
+          <NavLink to="/">Apoinment</NavLink>
 
-          <NavLink to="/riviews">Reviews</NavLink>
+          <NavLink to="/">Reviews</NavLink>
         </div>
       </div>
       <div className="navbar-end">
@@ -81,8 +81,8 @@ const handleLogOut = ()=>{
               >
                 SignOut
               </button>
-            <img src={user?.photoURL} alt="" className="ml-2 w-12 h-12
-             rounded-full" />
+            <Link to='/dashboard'><img src={user?.photoURL} alt="" className="ml-2 w-12 h-12
+             rounded-full" /></Link>
               
             </>
           ) : (

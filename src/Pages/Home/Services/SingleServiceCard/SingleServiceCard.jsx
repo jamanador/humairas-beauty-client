@@ -7,9 +7,6 @@ const SingleServiceCard = ({ service, setServiceData }) => {
       <h2 className="font-bold pt-1">{service?.servicename}</h2>
       <h5 className="text-second font-semibold">{service?.price}</h5>
       <p className="text-sm mb-3">{service?.description}</p>
-      {/* <button className="px-6 py-1 my-3 bg-main text-white text-sm">
-        Book Now
-      </button> */}
       <label
         onClick={() => setServiceData(service)}
         htmlFor="my-modal-3"

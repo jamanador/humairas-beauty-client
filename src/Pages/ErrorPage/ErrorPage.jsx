@@ -20,7 +20,7 @@ const ErrorPage = () => {
             You might have the wrong address, or the page may have moved.
           </p>
           <Link to="/">
-            <button className="w-full mb-2 py-2 px-3 text-white mt-3 bg-gray-600 sm:w-auto sm:mb-0">
+            <button className="w-full mb-2 py-1 rounded-lg px-3 text-white mt-3 bg-gray-dark sm:w-auto sm:mb-0">
               Back to homepage
             </button>
           </Link>

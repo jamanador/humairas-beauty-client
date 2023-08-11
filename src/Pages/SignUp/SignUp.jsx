@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import SmallSpinner from "../../Components/Shared/Spinner/SmallSpinner/SmallSpinner";
 import { authContext } from "../../Context/AuthProvider";
 
 const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(authContext);
 
   const { register, handleSubmit } = useForm();
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
+  const navigate = useNavigate();
+  const from = location?.state?.from.pathname || "/";
   const handleSignUp = (data) => {
     console.log(data);
     const name = data.name;
@@ -25,21 +30,14 @@ const SignUp = () => {
     })
       .then((res) => res.json())
       .then((imageData) => {
+        setLoading(true);
         createUser(email, password)
           .then((result) => {
             const user = result.user;
             console.log(user);
-            toast.success('Successfully Registered.', {
-              style: {
-                border: '1px solid #13ce66',
-                padding: '10px',
-                color: '#13ce66',
-              },
-              iconTheme: {
-                primary: '#13ce66',
-                secondary: '#ffffff',
-              },
-            });
+            toast.success("Successfully Registered.");
+            setLoading(false);
+            navigate(from, { replace: true });
             updateUserProfile(name, imageData.data.url)
               .then((result) => {})
               .catch((err) => {});
@@ -134,7 +132,7 @@ const SignUp = () => {
             className="input w-full  focus:outline-none border-gray rounded-xl"
           />
           <button className="w-full my-5 text-center py-1 text-white px-6 bg-gradient-to-r from-second to-main">
-            Submit
+            {loading ? <SmallSpinner /> : "Submit"}
           </button>
         </form>
         <p className="text-sm text-center py-4">

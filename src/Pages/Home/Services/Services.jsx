@@ -9,9 +9,9 @@ import "./Services.css";
 import SingleServiceCard from "./SingleServiceCard/SingleServiceCard";
 const Services = () => {
   const [services, setServices] = useState();
-  const [serviceData,setServiceData]= useState(null)
+  const [serviceData, setServiceData] = useState({});
   useEffect(() => {
-    fetch("services.json")
+    fetch(`${process.env.REACT_APP_SERVER_URL}/services`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +32,10 @@ const Services = () => {
           ></SingleServiceCard>
         ))}
       </div>
-      <ModalData serviceData={serviceData} setServiceData={setServiceData}></ModalData>
+      <ModalData
+        serviceData={serviceData}
+        setServiceData={setServiceData}
+      ></ModalData>
       <div className="text-center">
         <PrimaryButton>Explore More</PrimaryButton>
       </div>

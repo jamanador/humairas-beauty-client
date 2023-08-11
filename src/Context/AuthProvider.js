@@ -14,6 +14,7 @@ export const authContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(true);
 
   // user log in function
   const createUser = (email, password) => {
@@ -21,6 +22,7 @@ const AuthProvider = ({ children }) => {
   };
   // user update
   const updateUserProfile = (name, photo) => {
+    setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -29,26 +31,37 @@ const AuthProvider = ({ children }) => {
 
   // user sign in function
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // user logOut Function
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
   //   userObserve Function
   useEffect(() => {
+    setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
     };
   }, []);
 
-  const authInfo = { user, createUser, updateUserProfile, signIn, logOut };
+  const authInfo = {
+    user,
+    createUser,
+    updateUserProfile,
+    signIn,
+    logOut,
+    loading,
+  };
   return (
     <authContext.Provider value={authInfo}>{children}</authContext.Provider>
   );
